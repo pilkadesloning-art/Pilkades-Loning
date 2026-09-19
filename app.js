@@ -1,5 +1,5 @@
 // URL Web App Google Apps Script
-const API_URL = "https://script.google.com/macros/s/AKfycbzBTSxHv7tdGRi4T5BAUw86HROSG2FK9tPrfsyvuXOYolWJCHZFsII1M4h90rOg2M8l/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyCuy5daOVfhhpC9KwisNshjUZV2FZu--ZScTryQuXTKQJuyttzOZn9YNIrPo7hPvad/exec";
 let session = null;
 
 const $ = id => document.getElementById(id);
