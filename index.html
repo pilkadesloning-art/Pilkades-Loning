@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekap Pilkades</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">SISTEM REKAPITULASI</div>
+      <h1>Hasil Pilkades</h1>
+      <p>6 TPS · 2 Calon</p>
+    </div>
+    <button id="refreshBtn" class="btn secondary">↻ Muat Ulang</button>
+  </header>
+
+  <main class="container">
+    <section class="card settings">
+      <div class="section-title">
+        <div>
+          <h2>Pengaturan</h2>
+          <p>Nama calon diambil dari Google Sheets.</p>
+        </div>
+        <span id="status" class="status">Siap</span>
+      </div>
+      <div class="candidate-settings">
+        <label>Calon 1<input id="candidate1" type="text" value="Calon 1" disabled></label>
+        <label>Calon 2<input id="candidate2" type="text" value="Calon 2" disabled></label>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <div class="summary-card"><span id="label1">Calon 1</span><strong id="sum1">0</strong><small id="pct1">0%</small></div>
+      <div class="summary-card"><span id="label2">Calon 2</span><strong id="sum2">0</strong><small id="pct2">0%</small></div>
+      <div class="summary-card"><span>Suara Tidak Sah</span><strong id="invalid">0</strong><small>-</small></div>
+      <div class="summary-card"><span>Total Suara</span><strong id="grandTotal">0</strong><small>-</small></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <h2>Input Rekap TPS</h2>
+          <p>Masukkan angka hasil penghitungan pada tiap TPS.</p>
+        </div>
+        <button id="saveBtn" class="btn primary">Simpan Rekap</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>TPS</th>
+              <th id="th1">Calon 1</th>
+              <th id="th2">Calon 2</th>
+              <th>Tidak Sah</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+          <tfoot>
+            <tr>
+              <th>TOTAL</th>
+              <th id="foot1">0</th>
+              <th id="foot2">0</th>
+              <th id="footInvalid">0</th>
+              <th id="footTotal">0</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <h2>Grafik Suara</h2>
+          <p>Perbandingan suara sah dari seluruh TPS.</p>
+        </div>
+      </div>
+      <div class="bars">
+        <div class="bar-group">
+          <div class="bar-meta"><span id="barLabel1">Calon 1</span><b id="barValue1">0</b></div>
+          <div class="bar-track"><div id="bar1" class="bar"></div></div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-meta"><span id="barLabel2">Calon 2</span><b id="barValue2">0</b></div>
+          <div class="bar-track"><div id="bar2" class="bar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">Data disimpan di Google Sheets melalui Google Apps Script.</p>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
