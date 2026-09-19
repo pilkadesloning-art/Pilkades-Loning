@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rekap Pilkades</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><div class="eyebrow">SISTEM REKAPITULASI PILKADES</div><h1>Rekap Pilkades</h1><p>6 TPS · 2 Calon</p></div>
+</header>
+
+<main class="container">
+  <section id="loginCard" class="card login">
+    <h2>Masuk</h2>
+    <p>Pilih akses TPS untuk mengentri hasil atau Admin untuk melihat seluruh rekap.</p>
+    <label>Jenis Akses
+      <select id="role">
+        <option value="tps">Operator TPS</option>
+        <option value="admin">Admin</option>
+      </select>
+    </label>
+    <label id="tpsWrap">TPS
+      <select id="tps">
+        <option value="1">TPS 1</option><option value="2">TPS 2</option><option value="3">TPS 3</option>
+        <option value="4">TPS 4</option><option value="5">TPS 5</option><option value="6">TPS 6</option>
+      </select>
+    </label>
+    <label>PIN <input id="pin" type="password" inputmode="numeric" placeholder="Masukkan PIN"></label>
+    <button id="loginBtn" class="btn primary">Masuk</button>
+    <p class="hint">PIN awal dapat diatur di sheet <b>Config</b>.</p>
+  </section>
+
+  <section id="tpsPanel" hidden>
+    <div class="panel-head"><div><span class="badge" id="tpsBadge">TPS 1</span><h2>Entri Hasil TPS</h2><p id="entryStatus">Belum ada data.</p></div><button class="btn secondary logout">Keluar</button></div>
+    <section class="card">
+      <div class="candidate-grid">
+        <label id="c1Label">Calon 1 <input id="c1" type="number" min="0" step="1" value="0"></label>
+        <label id="c2Label">Calon 2 <input id="c2" type="number" min="0" step="1" value="0"></label>
+        <label>Suara Tidak Sah <input id="invalid" type="number" min="0" step="1" value="0"></label>
+      </div>
+      <div class="entry-total">Total suara TPS: <strong id="tpsTotal">0</strong></div>
+      <button id="saveTps" class="btn primary wide">Simpan Hasil TPS</button>
+    </section>
+  </section>
+
+  <section id="adminPanel" hidden>
+    <div class="panel-head"><div><span class="badge">ADMIN</span><h2>Dashboard Rekapitulasi</h2><p id="lastUpdate">-</p></div><div class="actions"><button id="refresh" class="btn secondary">↻ Refresh</button><button class="btn secondary logout">Keluar</button></div></div>
+    <section class="summary-grid">
+      <div class="summary-card"><span id="label1">Calon 1</span><strong id="sum1">0</strong><small id="pct1">0% suara sah</small></div>
+      <div class="summary-card"><span id="label2">Calon 2</span><strong id="sum2">0</strong><small id="pct2">0% suara sah</small></div>
+      <div class="summary-card"><span>Suara Tidak Sah</span><strong id="sumInvalid">0</strong><small>-</small></div>
+      <div class="summary-card"><span>Total Suara</span><strong id="sumTotal">0</strong><small>-</small></div>
+    </section>
+    <section class="card">
+      <h3>Rekap Per TPS</h3>
+      <div class="table-wrap"><table><thead><tr><th>TPS</th><th id="th1">Calon 1</th><th id="th2">Calon 2</th><th>Tidak Sah</th><th>Total</th><th>Status</th></tr></thead><tbody id="adminRows"></tbody><tfoot><tr><th>TOTAL</th><th id="ft1">0</th><th id="ft2">0</th><th id="fti">0</th><th id="ftt">0</th><th id="fts">-</th></tr></tfoot></table></div>
+    </section>
+    <section class="card">
+      <h3>Perbandingan Suara Sah</h3>
+      <div class="bars"><div><div class="bar-meta"><span id="barL1">Calon 1</span><b id="barV1">0</b></div><div class="track"><div id="bar1" class="bar"></div></div></div>
+      <div><div class="bar-meta"><span id="barL2">Calon 2</span><b id="barV2">0</b></div><div class="track"><div id="bar2" class="bar"></div></div></div></div>
+    </section>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
