@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Rekapitulasi Pilkades 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Kembali</a>
+        
+        <header>
+            <h1>📊 REKAPITULASI ADMIN</h1>
+            <p>Real-time Monitoring</p>
+        </header>
+
+        <div id="infoBox"></div>
+        
+        <div class="btn-group">
+            <button onclick="loadRekap()" class="btn-refresh">🔄 Refresh</button>
+            <button onclick="window.print()" class="btn-print">🖨️ Cetak</button>
+        </div>
+
+        <div id="statusTPS" class="status-tps"></div>
+        <div id="tabelRekap"></div>
+        <div id="pemenangBox"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
