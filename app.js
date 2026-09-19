@@ -1,5 +1,5 @@
 // Ganti URL ini setelah Google Apps Script dideploy sebagai Web App.
-const API_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const API_URL = "https://script.google.com/macros/s/AKfycbwNSElku0mofp25abo9skH1WxsdrslLYnlfQFZqthPkXFPo0UTexTyV_eQgnwMUL-w/exec";
 
 const rowsEl = document.getElementById("rows");
 const statusEl = document.getElementById("status");
