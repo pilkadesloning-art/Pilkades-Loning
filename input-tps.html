@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Suara - TPS <span id="tpsNumber"></span></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Kembali</a>
+        
+        <header>
+            <h1>TPS <span id="tpsNum">...</span></h1>
+            <p id="desaInfo">Memuat...</p>
+        </header>
+
+        <div id="statusBar"></div>
+
+        <form id="inputForm">
+            <div class="form-group">
+                <label>👥 Jumlah Pemilih</label>
+                <input type="number" id="pemilih" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>❌ Suara Tidak Sah</label>
+                <input type="number" id="tidakSah" min="0" value="0">
+            </div>
+
+            <div id="calonInputs"></div>
+
+            <div class="summary" id="summary"></div>
+
+            <button type="submit" class="btn-primary">💾 Simpan Data</button>
+            <button type="button" id="btnLock" class="btn-danger" onclick="lockData()">🔒 Kunci Data</button>
+        </form>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/input.js"></script>
+</body>
+</html>
